@@ -92,7 +92,7 @@ class PacketNPC(
     }
 
     fun updateOldViewer(viewer: Player) {
-        PacketUtils.sendGroupedPacket(viewers,DestroyEntitiesPacket(entityID))
+        viewer.sendPacket(DestroyEntitiesPacket(entityID))
         if (entityType == EntityType.PLAYER) {
             viewer.sendPacket(
                 PlayerInfoPacket(
